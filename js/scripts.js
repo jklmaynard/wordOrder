@@ -33,3 +33,13 @@ var capsSentence = newSentence.map(capitalize);
 return result.join()
 
 });
+
+
+$(document).ready(function() {
+  $("form#input").submit(function(event) {
+    var result = wordOrder($("input#sentence").val());
+    $(".result").text(result);
+    $("#result").show();
+    event.preventDefault();
+  });
+});
